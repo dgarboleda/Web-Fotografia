@@ -1,0 +1,185 @@
+body {
+    background: #02010a;
+    font-family: 'Dancing Script', cursive;
+    font-size: 100%;
+}
+
+/* Estilos a todas las imágenes del sitio */
+.imagen {
+    width: 100%;
+    border: 1px solid #000000;
+    box-shadow: 2px 2px #02010a;
+}
+
+/* Contenedor centrado */
+#contenido {
+    max-width: 900px;
+    margin: auto;
+    animation: slidein 1.5s;
+    -moz-animation: slidein 1.5s;
+    -webkit-animation: slidein 1.5s;
+    -o-animation: slidein 1.5s;
+}
+
+/* Cabecera */
+header {
+    background-color: #5b7989;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    padding: 3%;
+    overflow: hidden;
+}
+
+#titulo {
+    color: #ffffff;
+    text-shadow: 2px 2px #02010a;
+}
+
+#menu-principal a {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.active {
+    text-decoration: none;
+}
+
+/* Imagen Central */
+#imagen-central {
+    background-color: #82c3a6;
+    padding: 3% 10%; 
+}
+
+/* Imagenes en 2 columnas */
+
+#col-img {
+    background-color: #d5c75f;
+    padding: 20px 0;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 100%;
+}
+
+/* Imágenes en 3 columnas - Paisajes y Retratos */
+
+#galeria {
+    background-color: #d5c75f;
+    padding: 5% 5%;
+}
+
+#galeria div {
+    margin-top: 5%;
+}
+
+/* Footer */
+footer {
+    background: #C6d5c5;
+    padding: 2% 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+footer div {
+    margin: 3%;
+}
+
+footer img {
+    width: 16px;
+    margin-right: 5px;
+}
+
+/* Aplicando filtros a la galeria de imagenes Paisajes y Retratos */
+
+#galeria div:first-child {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+#galeria div:nth-child(even) {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+#galeria div:nth-child(3) {
+    filter: sepia(90%);
+    -webkit-filter: sepia(90%);
+}
+
+
+/* Animación Imagen Izquierda - Pagina de inicio*/
+.paisajes img {
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+.paisajes img:hover {
+    transform: rotate(10deg);
+    box-shadow: 2px 2px #82c3a6;
+    border: 0;    
+}
+
+/* Animación Imagen derecha - Pagina de inicio */
+.retratos img {
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.retratos img:hover {
+    transform: translate(20px,-5px);
+    box-shadow: 2px 2px #82c3a6;
+    border: 0;    
+}
+
+/*Código de animación "Rebote margen superior" */
+@keyframes slidein {
+    0% {
+        margin-top: 150%; /* El contenido incia fuera del viewport (margen inferior) */
+    }
+    60% {
+        margin-top: -5%; /* Se dezplaza por encima del viewport */
+    }
+    100% {
+        margin-top: 0%; /* Regresa al inicio del viewport */
+    }
+}
+
+@media (min-width:900px) {
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #col-img {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #col-img img {
+        width: 350px;
+    }
+
+    footer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    /* Imágenes en 3 columnas Retratos y Paisajes */
+    #galeria {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #galeria img {
+        width: 250px;
+    }
+}
